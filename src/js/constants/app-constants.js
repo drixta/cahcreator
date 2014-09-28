@@ -1,0 +1,5 @@
+module.exports = {
+	SELECT_TYPE : 'SELECT_TYPE',
+	EDIT_TEXT : 'EDIT_TEXT',
+	SUBMIT_CARD : 'SUBMIT_CARD'
+};

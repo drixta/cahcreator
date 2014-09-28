@@ -1,0 +1,12 @@
+# osx noise
+*.DS_Store
+profile
+
+# Node
+node_modules
+
+#Distribution
+dist
+
+#Todo
+todo
