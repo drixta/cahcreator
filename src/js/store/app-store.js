@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/app-dispatcher');
 var EventEmitter = require('events').EventEmitter;
-var TodoConstants = require('../constants/app-constants');
+var AppConstants = require('../constants/app-constants');
 var merge = require('react/lib/merge');
 
 var CHANGE_EVENT = 'change';
@@ -21,17 +21,17 @@ function _editText(text) {
 function _getSlots(text){
 	var i,
 		count = 0,
-		state;
+		state = false;
 	if (_card.type === 'b'){
 		for (i = 0; i < text.length; i++){
-			if  (text.charAt(i) === '_') {
-				state = true;
+			if (text.charAt(i) === '_') {
+				if (!state) {
+					count++;
+					state = true;
+				}
 			}
 			else {
-				if (state) {
-					count++;
-					state = false;
-				}
+				state = false;
 			}
 		}
 		count = count || 1;
@@ -61,12 +61,12 @@ var AppStore = merge(EventEmitter.prototype, {
     var action = payload.action;
     switch(action.actionType){
       	case AppConstants.SELECT_TYPE:
-        	_selectType(payload.action.value);
+        	_selectType(payload.action.type);
         	break;
 
       	case AppConstants.EDIT_TEXT:
-        	_editText(payload.action.value);
-        	_getSlots(payload.action.value);
+        	_editText(payload.action.text);
+        	_getSlots(payload.action.text);
         	break;
 
       	case AppConstants.SUBMIT_CARD:

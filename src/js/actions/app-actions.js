@@ -8,15 +8,15 @@ var AppActions = {
 			type: type
 		});
 	},
-	editText: function(){
+	editText: function(text){
 		AppDispatcher.handleViewAction({
-			actionType: AppConstants.EDIT_TEXT
+			actionType: AppConstants.EDIT_TEXT,
+			text: text
 		});
 	},
-	submitCard: function(card){
+	submitCard: function(){
 		AppDispatcher.handleViewAction({
 			actionType: AppConstants.SUBMIT_CARD,
-			card: card
 		});
 	}
 };

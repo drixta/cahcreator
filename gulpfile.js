@@ -56,7 +56,6 @@ gulp.task('watch', function(){
 });
 
 gulp.task('server', function(){
-	exec0('node server.js');
 	exec1('open http://localhost:3000');
 	return gulp.start('watch');
 });
