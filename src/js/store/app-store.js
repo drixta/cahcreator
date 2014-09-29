@@ -40,7 +40,15 @@ function _getSlots(text){
 }
 
 function _submitCard(){
-	// Do something here on submitting card
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST','/card', true);
+	xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	xhr.onreadystatechange = function(e) {
+		if (this.status === 200 && this.readyState === 4) {
+			console.log(this.response);
+		}
+	};
+	xhr.send(JSON.stringify(_card));
 }
 
 var AppStore = merge(EventEmitter.prototype, {

@@ -21,7 +21,6 @@ var Card = React.createClass({
 	},
 	render: function() {
 		var card = this.state.card;
-		console.log(card);
 		return (
 			<div id="card" className={card.type}>
 				<CardText text = {card.text}/>
