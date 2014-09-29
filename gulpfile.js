@@ -52,10 +52,13 @@ gulp.task('default', ['browserify','copy','less']);
 
 gulp.task('watch', function(){
 	gulp.start('browser-sync');
-	gulp.watch('./src/**/*.*', ['default', reload]);
+	gulp.watch('./src/less/*.less', ['less']);
+	gulp.watch('./src/js/**/*.js', ['browserify', reload]);
+	gulp.watch('./src/*.html', ['copy'], reload);
 });
 
 gulp.task('server', function(){
+	exec0('node server.js');
 	exec1('open http://localhost:3000');
 	return gulp.start('watch');
 });

@@ -10,7 +10,7 @@ var CardText = React.createClass({
 	},
 	render: function() {
 		return (
-			<input type="text" value={this.props.text} onChange={this.handleChange}/>
+			<textarea value={this.props.text} placeholder="Enter text here" onChange={this.handleChange} maxLength={150} />
 		);
 	}
 });

@@ -62,6 +62,7 @@ var AppStore = merge(EventEmitter.prototype, {
     switch(action.actionType){
       	case AppConstants.SELECT_TYPE:
         	_selectType(payload.action.type);
+        	_editText('');
         	break;
 
       	case AppConstants.EDIT_TEXT:

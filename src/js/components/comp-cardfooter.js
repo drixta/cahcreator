@@ -7,18 +7,17 @@ var CardFooter = React.createClass({
 
 	render: function() {
 		var slot;
-		console.log(this.props.slot);
 		if (this.props.slot > 1) {
 			slot = (<div className='blank-slots'>
 						PICK
-						<span>{this.props.slot}</span>
+						<span id="slot-num">{this.props.slot}</span>
 					</div>
 				);
 		}
 		return (
 			<div className='card-footer'>
 				<div className='card-logo'></div>
-				<span>Cards Against Humanity</span>
+				<span className='footer-text'>Cards Against Humanity</span>
 				{slot}
 			</div>
 		);

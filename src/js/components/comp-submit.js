@@ -10,7 +10,7 @@ var SubmitCard = React.createClass({
 	},
 	render: function() {
 		return (
-			<button onClick={this.handleClick}>Submit Card</button>
+			<button id="submit-button" onClick={this.handleClick}>Submit Card</button>
 		);
 	}
 

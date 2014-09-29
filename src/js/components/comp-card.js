@@ -21,9 +21,10 @@ var Card = React.createClass({
 	},
 	render: function() {
 		var card = this.state.card;
+		console.log(card);
 		return (
 			<div id="card" className={card.type}>
-				<CardText value = {card.text}/>
+				<CardText text = {card.text}/>
 				<CardFooter slot = {card.slot}/>
 			</div>
 		);
